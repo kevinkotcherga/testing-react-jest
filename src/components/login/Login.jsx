@@ -12,11 +12,12 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const data = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+      const {data} = await axios.get('https://jsonplaceholder.typicode.com/users/1');
       setUser(data);
     }catch{
       setError(true)
     }
+    setLoading(false)
   };
 
   return (
